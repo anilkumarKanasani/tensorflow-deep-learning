@@ -98,13 +98,16 @@ def visulize_batch_from_dataset(ds,classes_list):
     col = 0
     for x,y in ds:
         for batch in range (0, 32):
-            axs[row][col].imshow(x[batch]/255.)
-            axs[row][col].set_title(classes_list[tf.math.argmax(y[batch])])
-            axs[row][col].axis("off")
-            col = col+1
-            if col == 7:
-                row = row+1
-                col = 0
+            try:
+                axs[row][col].imshow(x[batch]/255.)
+                axs[row][col].set_title(classes_list[tf.math.argmax(y[batch])])
+                axs[row][col].axis("off")
+                col = col+1
+                if col == 7:
+                    row = row+1
+                    col = 0
+            except:
+                axs[row][col].axis("off")
         axs[4][4].axis("off")
         axs[4][5].axis("off")
         axs[4][6].axis("off")
