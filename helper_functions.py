@@ -9,3 +9,6 @@ def walk_through_data(raw_data_path:str):
             print("Class" , cls , "has : ", len(glob(raw_data_path+"/"+fold+"/"+cls+"/*")) , "files")
         print("-"*35)
     return None
+
+def visulize_raw_images():
+    pass
