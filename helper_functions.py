@@ -129,7 +129,7 @@ def plot_model_hist(hist_var):
 def prepare_tb_call_back(dir_name, experiment_name):
     import tensorflow as tf
     from datetime import datetime
-    log_dir = dir_name + "/" + experiment_name + "/" + datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
+    log_dir = dir_name + "/" + experiment_name + "/" + datetime.now().strftime("%Y%m%d-%H%M%S")
     tb_call_back = tf.keras.callbacks.TensorBoard(
                                     log_dir=log_dir,
                                 )
