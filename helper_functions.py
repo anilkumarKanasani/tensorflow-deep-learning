@@ -71,6 +71,7 @@ def prepare_dataset(ds,
     '''
     A helper function to augment and resize,reshaping a given image
     '''
+    import tensorflow as tf
     batch_size = 32
     AUTOTUNE = tf.data.AUTOTUNE
 
@@ -82,3 +83,26 @@ def prepare_dataset(ds,
                 num_parallel_calls=AUTOTUNE)
     
     return ds.prefetch(buffer_size=AUTOTUNE)
+
+def visulize_batch_from_dataset(ds):
+    '''
+    A helper function to visulize a batch of images from a given dataset
+    '''
+    import matplotlib.pyplot as plt
+    f, axs = plt.subplots(5, 7, sharey=True)
+    f.set_size_inches(30,10)
+    row = 0
+    col = 0
+    for x,y in ds:
+        for batch in range (0, 32):
+            axs[row][col].imshow(x[batch]/255.)
+            axs[row][col].set_title(ds.class_names[tf.math.argmax(y[batch])])
+            axs[row][col].axis("off")
+            col = col+1
+            if col == 7:
+                row = row+1
+                col = 0
+        axs[4][4].axis("off")
+        axs[4][5].axis("off")
+        axs[4][6].axis("off")
+        break
