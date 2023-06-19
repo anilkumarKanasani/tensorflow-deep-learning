@@ -84,7 +84,7 @@ def prepare_dataset(ds,
     
     return ds.prefetch(buffer_size=AUTOTUNE)
 
-def visulize_batch_from_dataset(ds):
+def visulize_batch_from_dataset(ds,classes_list):
     '''
     A helper function to visulize a batch of images from a given dataset
     '''
@@ -97,7 +97,7 @@ def visulize_batch_from_dataset(ds):
     for x,y in ds:
         for batch in range (0, 32):
             axs[row][col].imshow(x[batch]/255.)
-            axs[row][col].set_title(ds.class_names[tf.math.argmax(y[batch])])
+            axs[row][col].set_title(classes_list[tf.math.argmax(y[batch])])
             axs[row][col].axis("off")
             col = col+1
             if col == 7:
