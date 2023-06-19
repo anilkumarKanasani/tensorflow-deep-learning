@@ -1,5 +1,8 @@
 
 def walk_through_data(raw_data_path:str):
+    '''
+    A helper function to wlak through the input raw data (typical kaggle style input raw data)
+    '''
     import os
     from glob import glob
     for fold in os.listdir(raw_data_path):
@@ -39,3 +42,21 @@ def visulize_multi_class_raw_images(raw_data_path:str, fold: str):
             row = 1
             col = 0
     return None
+
+def average_img_shape(raw_data_path:str, fold: str):
+    '''
+    A helper function to get average of all images shpaes in a given folder
+    '''
+    import tensorflow as tf
+    from glob import glob
+    import os
+    import numpy as np
+    list_of_shapes = []
+    for cls in os.listdir(raw_data_path + "/" + fold):
+        for img in glob(raw_data_path+"/"+fold+"/"+cls+"/*"):
+            sample_img = img
+            sample_img = tf.io.read_file(sample_img)
+            sample_img = tf.image.decode_image(sample_img)
+            list_of_shapes.append(sample_img.shape.as_list())
+
+    return (np.mean(np.array(list_of_shapes),axis=0))
