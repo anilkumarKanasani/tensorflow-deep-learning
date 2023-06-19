@@ -88,6 +88,7 @@ def visulize_batch_from_dataset(ds):
     '''
     A helper function to visulize a batch of images from a given dataset
     '''
+    import tensorflow as tf
     import matplotlib.pyplot as plt
     f, axs = plt.subplots(5, 7, sharey=True)
     f.set_size_inches(30,10)
