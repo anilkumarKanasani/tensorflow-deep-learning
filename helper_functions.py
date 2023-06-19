@@ -121,3 +121,31 @@ def plot_model_hist(hist_var):
     pd.DataFrame(hist_var.history)[["loss","val_loss"]].plot(title="Loss Plots",ax=axes[0],figsize=(10,5))
     pd.DataFrame(hist_var.history)[["accuracy","val_accuracy"]].plot(title="Accuracy Plots",ax=axes[1],figsize=(10,5))
     return None
+
+
+def prepare_tb_call_back(dir_name, experiment_name):
+    import tensorflow as tf
+    from datetime import datetime
+    log_dir = dir_name + "/" + experiment_name + "/" + datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
+    tb_call_back = tf.keras.callbacks.TensorBoard(
+                                    log_dir=log_dir,
+                                )
+    print("Saving TensorBoard log files to: " , log_dir)
+    return tb_call_back
+
+def prepare_checkpoint_call_back(dir_name, experiment_name):
+    import tensorflow as tf
+    filepath = dir_name + "/" + experiment_name 
+    ckpt_call_back = tf.keras.callbacks.ModelCheckpoint(
+                                                filepath=filepath,
+                                                monitor = 'val_loss',
+                                                verbose=1,
+                                                save_best_only = False,
+                                                save_weights_only = False,
+                                                mode = 'auto',
+                                                save_freq='epoch',
+                                                options=None,
+                                                initial_value_threshold=None,
+                                            )
+    print("Saving Checkpoints to files : " , filepath)
+    return ckpt_call_back
