@@ -22,7 +22,7 @@ To run these notebooks locally, you'll need to set up a Python environment with 
 1. Clone this repository to your local machine:
 
 ```bash
-git clone [https://github.com/anilkumarKanasani/tensorflow-deep-learning.git](https://github.com/anilkumarKanasani/tensorflow-deep-learning.git)
+git clone https://github.com/anilkumarKanasani/tensorflow-deep-learning.git
 ```
 
 2. Navigate to the repository directory:
