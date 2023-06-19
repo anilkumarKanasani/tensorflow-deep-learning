@@ -11,13 +11,18 @@ This repository contains a collection of Jupyter notebooks for training deep lea
 - [License](#license)
 
 ## Installation
+### Google Colab instructions :-
+It is recommended to execute the notebooks in Google Colab. Linkt to Colab is provided in each notebook speprately.
 
+If you dont have access to Google Colab, then please follow the bellow installation in your local machine.
+
+### Local Installation instructions :-
 To run these notebooks locally, you'll need to set up a Python environment with TensorFlow and Jupyter installed. Follow these steps to get started:
 
 1. Clone this repository to your local machine:
 
 ```bash
-git clone [https://github.com/your-username/your-repo.git](https://github.com/anilkumarKanasani/tensorflow-deep-learning.git)
+git clone [https://github.com/anilkumarKanasani/tensorflow-deep-learning.git](https://github.com/anilkumarKanasani/tensorflow-deep-learning.git)
 ```
 
 2. Navigate to the repository directory:
@@ -49,11 +54,15 @@ jupyter notebook
 
 The notebooks in this repository are organized by topic and architecture. Here is a brief overview of the available notebooks:
 
-- `01-cnn-image-classification.ipynb`: Convolutional Neural Network (CNN) for image classification using TensorFlow.
-- `02-rnn-text-generation.ipynb`: Recurrent Neural Network (RNN) for text generation using TensorFlow.
-- `03-transfer-learning.ipynb`: Transfer learning using pre-trained models in TensorFlow.
-- `04-gan-generative-adversarial-networks.ipynb`: Generative Adversarial Networks (GANs) for image generation using TensorFlow.
-- `05-object-detection.ipynb`: Object detection using TensorFlow's Object Detection API.
+- `00_Basics_of_Tensorflow.ipynb`: XXXXX.
+- `01_Larger_Example_UseCase.ipynb`: XXXXX.
+- `02_regression.ipynb`: XXXXX.
+- `03_classification.ipynb`: XXXXX.
+- `04_multi_class_classificaiton.ipynb`: XXXXX.
+- `05_a_CNN.ipynb`: XXXXX.
+- `05_b_multi_class_cnn.ipynb`: XXXXX.
+- `06_transfer_learning_feature_extraction.ipynb`: XXXXX.
+- `07_transfer_learning_fine_tunning.ipynb`: XXXXX.
 
 Feel free to explore these notebooks and experiment with different architectures and techniques.
 
