@@ -60,3 +60,25 @@ def average_img_shape(raw_data_path:str, fold: str):
             list_of_shapes.append(sample_img.shape.as_list())
 
     return (np.mean(np.array(list_of_shapes),axis=0))
+
+
+
+def prepare_dataset(ds, 
+            data_augmentation,
+            resize_and_rescale,
+            augment=False
+            ):
+    '''
+    A helper function to augment and resize,reshaping a given image
+    '''
+    batch_size = 32
+    AUTOTUNE = tf.data.AUTOTUNE
+
+    if augment:
+        ds = ds.map(lambda x, y: (data_augmentation(x, training=True), y), 
+                    num_parallel_calls=AUTOTUNE)
+
+    ds = ds.map(lambda x, y: (resize_and_rescale(x), y), 
+                num_parallel_calls=AUTOTUNE)
+    
+    return ds.prefetch(buffer_size=AUTOTUNE)
