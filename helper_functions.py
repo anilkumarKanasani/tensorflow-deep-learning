@@ -75,12 +75,14 @@ def prepare_dataset(ds,
     batch_size = 32
     AUTOTUNE = tf.data.AUTOTUNE
 
+    ds = ds.map(lambda x, y: (resize_and_rescale(x), y), 
+                num_parallel_calls=AUTOTUNE)
+    
     if augment:
         ds = ds.map(lambda x, y: (data_augmentation(x, training=True), y), 
                     num_parallel_calls=AUTOTUNE)
 
-    ds = ds.map(lambda x, y: (resize_and_rescale(x), y), 
-                num_parallel_calls=AUTOTUNE)
+
     
     return ds.prefetch(buffer_size=AUTOTUNE)
 
@@ -107,3 +109,15 @@ def visulize_batch_from_dataset(ds,classes_list):
         axs[4][5].axis("off")
         axs[4][6].axis("off")
         break
+    return None
+
+def plot_model_hist(hist_var):
+    '''
+    A helper function to plot loss and accuracy from history variable
+    '''
+    import pandas as pd
+    import matplotlib.pyplot as plt
+    fig, axes = plt.subplots(nrows=1, ncols=2)
+    pd.DataFrame(hist_var.history)[["loss","val_loss"]].plot(title="Loss Plots",ax=axes[0],figsize=(10,5))
+    pd.DataFrame(hist_var.history)[["accuracy","val_accuracy"]].plot(title="Accuracy Plots",ax=axes[1],figsize=(10,5))
+    return None
