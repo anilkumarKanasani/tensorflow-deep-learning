@@ -1,4 +1,5 @@
 .DS_Store
+.vscode/*
 *data/*
 Notebooks/running_logs/*
 */__pycache__/*
