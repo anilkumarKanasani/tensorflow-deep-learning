@@ -1,0 +1,14 @@
+name: tensorflow-certification
+channels:
+  - conda-forge
+  - defaults
+  - anaconda
+dependencies:
+  - python=3.8.8
+  - pip=21.3.1
+  - jupyterlab=3.2.1
+  - pip:
+    - tensorflow==2.8.0
+    - protobuf==3.19.0
+    - pandas==1.4.3
+    - scikit-learn
