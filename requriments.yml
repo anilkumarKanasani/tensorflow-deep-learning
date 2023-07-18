@@ -9,6 +9,8 @@ dependencies:
   - jupyterlab=3.2.1
   - pip:
     - tensorflow==2.8.0
+    - tensorflow-hub
     - protobuf==3.19.0
     - pandas==1.4.3
     - scikit-learn
+    - matplotlib
