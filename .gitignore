@@ -1,6 +1,6 @@
 .DS_Store
 .vscode/*
-*data/*
+Notebooks/data/*
 Notebooks/running_logs/*
 Notebooks/saved_models/*
 Notebooks/results/*
