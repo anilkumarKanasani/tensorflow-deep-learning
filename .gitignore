@@ -2,4 +2,6 @@
 .vscode/*
 *data/*
 Notebooks/running_logs/*
+Notebooks/saved_models/*
+Notebooks/results/*
 */__pycache__/*
