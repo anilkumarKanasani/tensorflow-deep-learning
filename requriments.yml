@@ -9,6 +9,7 @@ dependencies:
   - jupyterlab=3.2.1
   - pip:
     - ipykernel
+    - jupyter
     - tensorflow==2.8.0
     - tensorflow-hub
     - protobuf==3.19.0
