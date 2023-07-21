@@ -142,8 +142,8 @@ def prepare_checkpoint_call_back(dir_name, experiment_name):
     ckpt_call_back = tf.keras.callbacks.ModelCheckpoint(
                                                 filepath=filepath,
                                                 monitor = 'val_loss',
-                                                verbose=1,
-                                                save_best_only = False,
+                                                verbose=0,
+                                                save_best_only = True,
                                                 save_weights_only = False,
                                                 mode = 'auto',
                                                 save_freq='epoch',

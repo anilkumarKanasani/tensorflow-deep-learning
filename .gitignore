@@ -3,6 +3,7 @@
 .idea/*
 Notebooks/sample_data/*
 Notebooks/running_logs/*
+Notebooks/model_check_point_logs/*
 Notebooks/saved_models/*
 Notebooks/results/*
 */__pycache__/*
