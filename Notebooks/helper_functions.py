@@ -150,5 +150,4 @@ def prepare_checkpoint_call_back(dir_name, experiment_name):
                                                 options=None,
                                                 initial_value_threshold=None,
                                             )
-    print("Saving Checkpoints to files : " , filepath)
     return ckpt_call_back
